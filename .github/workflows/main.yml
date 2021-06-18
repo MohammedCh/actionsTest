@@ -27,5 +27,5 @@ jobs:
       - name: commit changed files
         run: git remote add origin https://github.com/MohammedCh/actionsTest.git
       - name: push code to master
-        run: git push origin
+        run: git push origin:main
 
