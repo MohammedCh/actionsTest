@@ -15,11 +15,15 @@ jobs:
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       - name: stage changed files
+        run: git init
+      - name: stage changed files
         run: git clone https://github.com/MohammedCh/actionsTest.git
       - name: stage changed files
         run: git add .
       - name: commit changed files
         run: git commit -m "Auto updating txt"
+      - name: fetch from master
+        run: git fetch origin master
       - name: push code to master
         run: git push origin HEAD:main
 
