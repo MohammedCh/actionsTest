@@ -16,11 +16,21 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
-      - name: update file and push to remote
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
+      # - name: update file and push to remote
+      #   run: |
+      #     git config user.name github-actions
+      #     git config user.email github-actions@github.com
+      #     git add .
+      #     git commit -m "generated"
+      #     git push
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'actionsTest'
+          destination-github-username: 'MohammedCh'
+          destination-repository-name: 'loyaltyTest'
+          user-email: github-actions@github.com
+          target-branch: main
 
