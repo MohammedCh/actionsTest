@@ -30,7 +30,7 @@ jobs:
         with:
           source-directory: 'output'
           destination-github-username: 'MohammedCh'
-          destination-repository-name: 'loyaltyTest'
+          destination-repository-name: 'loyaltyTest/output'
           user-email: github-actions@github.com
           target-branch: main
 
