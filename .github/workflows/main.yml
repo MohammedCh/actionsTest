@@ -28,7 +28,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'actionsTest'
+          source-directory: 'output'
           destination-github-username: 'MohammedCh'
           destination-repository-name: 'loyaltyTest'
           user-email: github-actions@github.com
