@@ -18,24 +18,9 @@ jobs:
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       - name: update file and push to remote
         run: |
-          git config --global user.name "actionUser"
-          git config --global user.email "mohammed.chakmakchi@lego.com"
-
-          git add -A
-          git commit -m "Update test.txt"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
           git push
-      # - name: stage changed files
-      #   run: git init
-      # - name: add username
-      #   run: git config user.name "actionUser"
-      # - name: add email
-      #   run: git config user.email "mohammed.chakmakchi@lego.com"
-      # - name: stage changed files
-      #   run: git add .
-      # - name: commit changed files
-      #   run: git commit -m "Auto updating txt"
-      # - name: commit changed files
-      #   run: git remote add origin https://github.com/MohammedCh/actionsTest.git
-      # - name: push code to master
-      #   run: git push origin:main
 
